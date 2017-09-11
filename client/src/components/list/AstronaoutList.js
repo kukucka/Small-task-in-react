@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import AddNew from './AddNew';
+
 class AstronaoutList extends Component {
   render() {
     return (
       <div>
-        <h1>Main page</h1>
+        <AddNew />
       </div>
     );
   }

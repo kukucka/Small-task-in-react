@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+// import 'semantic-ui-css/semantic.min.css';
+import InputForm from './InputForm';
 
 class AddNewForm extends Component {
   render() {
     return (
       <div>
-        <h1>Add</h1>
+        <InputForm />
       </div>
     );
   }
