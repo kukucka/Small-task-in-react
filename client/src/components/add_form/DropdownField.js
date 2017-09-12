@@ -9,8 +9,9 @@ class DropdownField extends Component {
   }
 
   handleDate(e, data) {
-    console.log(data.value);
-    console.log(data.name);
+    let val = data.value;
+    let name = data.name;
+    this.props.onHandleChangeOnDropdown(val, name);
   }
 
   render() {
@@ -23,6 +24,7 @@ class DropdownField extends Component {
           options={this.props.option} //{this.handleOptions()}
           name={this.props.name}
           onChange={this.handleDate}
+          value={this.props.value}
         />
       </div>
     );

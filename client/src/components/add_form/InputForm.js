@@ -34,9 +34,27 @@ let InputForm = props => {
         <Form.Field required style={{ marginTop: '5px' }}>
           <label>Birth Date</label>
           <Form.Group unstackable>
-            <DropdownField holder="Day" name="day" option={days} />
-            <DropdownField holder="Month" name="month" option={months} />
-            <DropdownField holder="Year" name="year" option={years} />
+            <DropdownField
+              holder="Day"
+              name="day"
+              option={days}
+              value={props.data.dateOfBirth.day}
+              onHandleChangeOnDropdown={props.onHandleChangeOnDropdown}
+            />
+            <DropdownField
+              holder="Month"
+              name="month"
+              option={months}
+              value={props.data.dateOfBirth.month}
+              onHandleChangeOnDropdown={props.onHandleChangeOnDropdown}
+            />
+            <DropdownField
+              holder="Year"
+              name="year"
+              option={years}
+              value={props.data.dateOfBirth.year}
+              onHandleChangeOnDropdown={props.onHandleChangeOnDropdown}
+            />
           </Form.Group>
         </Form.Field>
         <Form.Button primary>Submit</Form.Button>

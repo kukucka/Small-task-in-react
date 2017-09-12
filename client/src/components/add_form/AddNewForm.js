@@ -22,6 +22,7 @@ class AddNewForm extends Component {
     };
 
     this.handleChangeOnInput = this.handleChangeOnInput.bind(this);
+    this.handleChangeOnDropdown = this.handleChangeOnDropdown.bind(this);
   }
 
   handleChangeOnInput(char, state) {
@@ -37,6 +38,17 @@ class AddNewForm extends Component {
     });
   }
 
+  handleChangeOnDropdown(char, state) {
+    this.setState(prevState => {
+      return {
+        data: {
+          ...prevState.data,
+          dateOfBirth: { ...prevState.data.dateOfBirth, [state]: char }
+        }
+      };
+    });
+  }
+
   render() {
     console.log(this.state);
     return (
@@ -44,6 +56,7 @@ class AddNewForm extends Component {
         <InputForm
           data={this.state.data}
           onHandleChangeOnInput={this.handleChangeOnInput}
+          onHandleChangeOnDropdown={this.handleChangeOnDropdown}
         />
       </div>
     );
