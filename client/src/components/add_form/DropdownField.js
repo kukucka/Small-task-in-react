@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Dropdown } from 'semantic-ui-react';
-// import { days } from '../../data/days';
-// import { months } from '../../data/months';
-// import { years } from '../../data/years';
 
 class DropdownField extends Component {
   constructor(props) {
@@ -23,7 +20,7 @@ class DropdownField extends Component {
           placeholder={this.props.holder}
           search
           selection
-          options={this.props.opt} //{this.handleOptions()}
+          options={this.props.option} //{this.handleOptions()}
           name={this.props.name}
           onChange={this.handleDate}
         />

@@ -8,9 +8,10 @@ class AddNewForm extends Component {
 
     this.state = {
       data: {
-        name: 'one',
-        surename: 'two',
-        superpower: 'three',
+        name: '',
+        surename: '',
+        superpower: '',
+        nationality: '',
         dateOfBirth: {
           day: '',
           month: '',
@@ -19,13 +20,31 @@ class AddNewForm extends Component {
       },
       listOfAstr: []
     };
+
+    this.handleChangeOnInput = this.handleChangeOnInput.bind(this);
+  }
+
+  handleChangeOnInput(char, state) {
+    this.setState(prevState => {
+      console.log(prevState.data);
+      console.log(state, char);
+      return {
+        data: {
+          ...prevState.data,
+          [state]: char
+        }
+      };
+    });
   }
 
   render() {
     console.log(this.state);
     return (
       <div>
-        <InputForm data={this.state.data} />
+        <InputForm
+          data={this.state.data}
+          onHandleChangeOnInput={this.handleChangeOnInput}
+        />
       </div>
     );
   }

@@ -13,23 +13,30 @@ let InputForm = props => {
     <div>
       <h1>Add New Astronaut</h1>
       <Form onSubmit={() => console.log('wow')}>
-        <InputField name="name" holder="Name" value={props.data.name} />
         <InputField
-          name="surname"
+          name="name"
+          holder="Name"
+          value={props.data.name}
+          onHandleChangeOnInput={props.onHandleChangeOnInput}
+        />
+        <InputField
+          name="surename"
           holder="Surename"
           value={props.data.surename}
+          onHandleChangeOnInput={props.onHandleChangeOnInput}
         />
         <InputField
           name="superpower"
           holder="Superpower"
           value={props.data.superpower}
+          onHandleChangeOnInput={props.onHandleChangeOnInput}
         />
         <Form.Field required style={{ marginTop: '5px' }}>
           <label>Birth Date</label>
           <Form.Group unstackable>
-            <DropdownField holder="Day" name="day" opt={days} />
-            <DropdownField holder="Month" name="month" opt={months} />
-            <DropdownField holder="Year" name="year" opt={years} />
+            <DropdownField holder="Day" name="day" option={days} />
+            <DropdownField holder="Month" name="month" option={months} />
+            <DropdownField holder="Year" name="year" option={years} />
           </Form.Group>
         </Form.Field>
         <Form.Button primary>Submit</Form.Button>
