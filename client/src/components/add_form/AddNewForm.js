@@ -1,34 +1,27 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 // import 'semantic-ui-css/semantic.min.css';
 import InputForm from './InputForm';
 
 class AddNewForm extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    data: {
+      name: '',
+      surename: '',
+      superpower: '',
+      dateOfBirth: {
+        day: '',
+        month: '',
+        year: ''
+      }
+    },
+    listOfAstr: [] //tesstovaci ucely
+  };
 
-    this.state = {
-      data: {
-        name: '',
-        surename: '',
-        superpower: '',
-        nationality: '',
-        dateOfBirth: {
-          day: '',
-          month: '',
-          year: ''
-        }
-      },
-      listOfAstr: []
-    };
-
-    this.handleChangeOnInput = this.handleChangeOnInput.bind(this);
-    this.handleChangeOnDropdown = this.handleChangeOnDropdown.bind(this);
-  }
-
-  handleChangeOnInput(char, state) {
+  handleChangeOnInput = (char, state) => {
     this.setState(prevState => {
-      console.log(prevState.data);
-      console.log(state, char);
+      // console.log(prevState.data);
+      // console.log(state, char);
       return {
         data: {
           ...prevState.data,
@@ -36,9 +29,9 @@ class AddNewForm extends Component {
         }
       };
     });
-  }
+  };
 
-  handleChangeOnDropdown(char, state) {
+  handleChangeOnDropdown = (char, state) => {
     this.setState(prevState => {
       return {
         data: {
@@ -47,16 +40,29 @@ class AddNewForm extends Component {
         }
       };
     });
-  }
+  };
+
+  handleSubmit = () => {
+    // console.log(this.state.data);
+    axios
+      .post('/api/new_user', this.state.data)
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div>
         <InputForm
           data={this.state.data}
           onHandleChangeOnInput={this.handleChangeOnInput}
           onHandleChangeOnDropdown={this.handleChangeOnDropdown}
+          onHandleSubmit={this.handleSubmit}
         />
       </div>
     );

@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import { Form, Input } from 'semantic-ui-react';
 
 class InputField extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleInput = this.handleInput.bind(this);
-  }
-
-  handleInput(e) {
+  handleInput = e => {
     let val = e.target.value;
     let name = e.target.name;
-    console.log(val, name);
+    // console.log(val, name);
     this.props.onHandleChangeOnInput(val, name);
-  }
+  };
 
   render() {
-    console.log();
+    // console.log();
     return (
       <div>
         <Form.Field required style={{ marginTop: '5px' }}>

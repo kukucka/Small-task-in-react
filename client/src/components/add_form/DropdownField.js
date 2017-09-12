@@ -2,17 +2,11 @@ import React, { Component } from 'react';
 import { Dropdown } from 'semantic-ui-react';
 
 class DropdownField extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleDate = this.handleDate.bind(this);
-  }
-
-  handleDate(e, data) {
+  handleDate = (e, data) => {
     let val = data.value;
     let name = data.name;
     this.props.onHandleChangeOnDropdown(val, name);
-  }
+  };
 
   render() {
     return (

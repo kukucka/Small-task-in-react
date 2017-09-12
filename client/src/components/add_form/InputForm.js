@@ -7,12 +7,12 @@ import { years } from '../../data/years';
 import InputField from './InputField';
 import DropdownField from './DropdownField';
 
-let InputForm = props => {
-  console.log(props.data);
+const InputForm = props => {
+  // console.log(props.data);
   return (
     <div>
       <h1>Add New Astronaut</h1>
-      <Form onSubmit={() => console.log('wow')}>
+      <Form onSubmit={props.onHandleSubmit}>
         <InputField
           name="name"
           holder="Name"
