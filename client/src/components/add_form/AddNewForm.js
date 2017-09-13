@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Router } from 'react-router-dom';
 // import 'semantic-ui-css/semantic.min.css';
 import InputForm from './InputForm';
+import { base } from '../../base';
 
 class AddNewForm extends Component {
   state = {
@@ -15,8 +17,24 @@ class AddNewForm extends Component {
         year: ''
       }
     },
-    listOfAstr: [] //tesstovaci ucely
+    listOfAstr: []
+    //tesstovaci ucely
   };
+
+  // componentWillMount() {
+  //   this.astronautRef = base.syncState('listOfAstr', {
+  //     context: this,
+  //     state: 'listOfAstr'
+  //   });
+  // }
+  //
+  // componentWillUnmount() {
+  //   base.removeBinding(this.astronautRef);
+  // }
+  //
+  // addAstrounaut = () => {
+  //   const astrounat =
+  // }
 
   handleChangeOnInput = (char, state) => {
     this.setState(prevState => {
@@ -43,15 +61,26 @@ class AddNewForm extends Component {
   };
 
   handleSubmit = () => {
-    // console.log(this.state.data);
-    axios
-      .post('/api/new_user', this.state.data)
-      .then(function(response) {
-        console.log(response);
+    let userId = Date.now();
+    base
+      .post(`astronauts/${userId}`, {
+        data: {
+          astronaut: this.state.data,
+          id: userId,
+          key: userId
+        }
       })
-      .catch(function(error) {
-        console.log(error);
+      .then(() => {
+        this.props.history.push('/');
+      })
+      .catch(err => {
+        // handle error
       });
+  };
+
+  handleBack = e => {
+    e.preventDefault();
+    this.props.history.push('./');
   };
 
   render() {
@@ -63,6 +92,7 @@ class AddNewForm extends Component {
           onHandleChangeOnInput={this.handleChangeOnInput}
           onHandleChangeOnDropdown={this.handleChangeOnDropdown}
           onHandleSubmit={this.handleSubmit}
+          onHandleBack={this.handleBack}
         />
       </div>
     );

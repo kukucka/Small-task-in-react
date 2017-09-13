@@ -57,7 +57,12 @@ const InputForm = props => {
             />
           </Form.Group>
         </Form.Field>
-        <Form.Button primary>Submit</Form.Button>
+        <Form.Group unstackable>
+          <Form.Button primary>Submit</Form.Button>
+          <Form.Button primary onClick={props.onHandleBack}>
+            Go back
+          </Form.Button>
+        </Form.Group>
       </Form>
     </div>
   );
