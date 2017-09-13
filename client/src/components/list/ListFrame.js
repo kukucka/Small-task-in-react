@@ -1,10 +1,15 @@
 import React from 'react';
 import AddNew from './AddNew';
+import ListItem from './ListItem';
 
-const ListFrame = () => {
+const ListFrame = props => {
   return (
     <div>
       <h1>List of astronauts</h1>
+      <ListItem
+        data={props.data}
+        onhandleDeleteAstronaut={props.onhandleDeleteAstronaut}
+      />
       <AddNew />
     </div>
   );

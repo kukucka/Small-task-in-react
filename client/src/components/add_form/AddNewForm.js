@@ -67,7 +67,8 @@ class AddNewForm extends Component {
         data: {
           astronaut: this.state.data,
           id: userId,
-          key: userId
+          key: userId,
+          deleted: false
         }
       })
       .then(() => {

@@ -23,10 +23,38 @@ class AstronaoutList extends Component {
       });
   }
 
+  handleDeleteAstronaut = id => {
+    // bears endpoint currently holds the object { name: 'Bill', type: 'Grizzly' }
+    base
+      .update(`astronauts/${id}`, {
+        data: { deleted: true }
+      })
+      .then(() => {
+        base
+          .fetch('astronauts', {
+            context: this,
+            asArray: true
+          })
+          .then(data => {
+            this.setState(() => {
+              return {
+                list: data
+              };
+            });
+          });
+      })
+      .catch(err => {
+        //handle error
+      });
+  };
+
   render() {
     return (
       <div>
-        <ListFrame />
+        <ListFrame
+          data={this.state.list}
+          onhandleDeleteAstronaut={this.handleDeleteAstronaut}
+        />
       </div>
     );
   }
