@@ -3,18 +3,30 @@ import { Form, Input } from 'semantic-ui-react';
 
 class InputField extends Component {
   handleInput = e => {
-    let val = e.target.value;
+    let value = e.target.value;
     let name = e.target.name;
     // console.log(val, name);
-    this.props.onHandleChangeOnInput(val, name);
+    this.props.onHandleChangeOnInput(value, name);
+  };
+
+  displayError = () => {
+    if (this.props.errors) {
+      return <h3>{this.props.errors}</h3>;
+    }
+    return '';
   };
 
   render() {
-    // console.log();
     return (
       <div>
-        <Form.Field required style={{ marginTop: '5px' }}>
+        <Form.Field
+          error={!!this.props.errors}
+          style={{ marginTop: '5px' }}
+          required
+          onClick={this.checkForError}
+        >
           <label htmlFor={this.props.name}>{this.props.holder}</label>
+          {this.displayError()}
           <Input
             placeholder={this.props.holder}
             type="text"

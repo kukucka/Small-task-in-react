@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Router } from 'react-router-dom';
 // import 'semantic-ui-css/semantic.min.css';
 import InputForm from './InputForm';
 import { base } from '../../base';
@@ -11,71 +10,89 @@ class AddNewForm extends Component {
       name: '',
       surename: '',
       superpower: '',
-      dateOfBirth: {
-        day: '',
-        month: '',
-        year: ''
-      }
+      day: '',
+      month: '',
+      year: ''
     },
-    listOfAstr: []
-    //tesstovaci ucely
+    errors: {
+      name: '',
+      surename: '',
+      superpower: '',
+      day: '',
+      month: '',
+      year: ''
+    },
+    add: true
   };
 
-  // componentWillMount() {
-  //   this.astronautRef = base.syncState('listOfAstr', {
-  //     context: this,
-  //     state: 'listOfAstr'
-  //   });
-  // }
-  //
-  // componentWillUnmount() {
-  //   base.removeBinding(this.astronautRef);
-  // }
-  //
-  // addAstrounaut = () => {
-  //   const astrounat =
-  // }
+  checkForErrors = () => {
+    let data = this.state.data;
+    let errors = this.state.errors;
+    let arr = ['name', 'surename', 'superpower', 'day', 'month', 'year'];
+    for (let i = 0; i < arr.length; i++) {
+      if (data[arr[i]] === '') {
+        this.setState(prevState => {
+          return {
+            errors: { ...prevState.errors, [arr[i]]: `${arr[i]} is required` },
+            add: false
+          };
+        });
+      } else if (errors[arr[i]] !== '') {
+        this.setState(prevState => {
+          return {
+            errors: { ...prevState.errors, [arr[i]]: '' }
+          };
+        });
+      }
+    }
+  };
 
-  handleChangeOnInput = (char, state) => {
+  handleChangeOnInput = (value, state) => {
     this.setState(prevState => {
       // console.log(prevState.data);
       // console.log(state, char);
       return {
         data: {
           ...prevState.data,
-          [state]: char
+          [state]: value
         }
       };
     });
   };
 
-  handleChangeOnDropdown = (char, state) => {
-    this.setState(prevState => {
-      return {
-        data: {
-          ...prevState.data,
-          dateOfBirth: { ...prevState.data.dateOfBirth, [state]: char }
-        }
-      };
-    });
-  };
 
-  handleSubmit = () => {
-    let userId = Date.now();
-    base
-      .post(`astronauts/${userId}`, {
-        data: {
-          astronaut: this.state.data,
-          id: userId,
-          key: userId,
-          deleted: false
-        }
+  handleSubmit = e => {
+    e.preventDefault();
+
+    Promise.resolve()
+      .then(() => {
+        this.checkForErrors();
       })
       .then(() => {
-        this.props.history.push('/');
-      })
-      .catch(err => {
-        // handle error
+        if (this.state.add) {
+          let userId = Date.now();
+          base
+            .post(`astronauts/${userId}`, {
+              data: {
+                astronaut: this.state.data,
+                id: userId,
+                key: userId,
+                deleted: false
+              }
+            })
+            .then(() => {
+              this.props.history.push('/');
+            })
+            .catch(err => {
+              // handle error
+            });
+        } else {
+          this.setState(() => {
+            return {
+              add: true
+            };
+          });
+        }
       });
   };
 
@@ -89,6 +106,7 @@ class AddNewForm extends Component {
     return (
       <div>
         <InputForm
+          errors={this.state.errors}
           data={this.state.data}
           onHandleChangeOnInput={this.handleChangeOnInput}
           onHandleChangeOnDropdown={this.handleChangeOnDropdown}
@@ -100,6 +118,5 @@ class AddNewForm extends Component {
   }
 }
 
-// AddNewForm.propTypes = {};
 
 export default AddNewForm;

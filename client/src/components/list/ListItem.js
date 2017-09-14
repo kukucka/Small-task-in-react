@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import firebase from 'firebase';
-import { Segment, List, Button } from 'semantic-ui-react';
+import {Segment, List, Button} from 'semantic-ui-react';
 
 class ListItem extends Component {
   handleBtnClick = e => {
@@ -16,22 +16,28 @@ class ListItem extends Component {
         if (!data[i].deleted) {
           arr[j] = (
             <Segment key={data[i].id}>
-              <List
-                horizontal
-                divided
-                relaxed
-                style={{ width: '100%', textAlign: 'center' }}
-              >
-                <List.Item style={{ width: '25%' }}>
+              <List horizontal divided relaxed style={{
+                width: '100%',
+                textAlign: 'center'
+              }}>
+                <List.Item style={{
+                  width: '25%'
+                }}>
                   {`${data[i].astronaut.name} ${data[i].astronaut.surename}`}
                 </List.Item>
-                <List.Item style={{ color: 'gray', width: '25%' }}>
-                  {`${data[i].astronaut.dateOfBirth.day}.${data[i].astronaut
-                    .dateOfBirth.month} ${data[i].astronaut.dateOfBirth.year}`}
+                <List.Item style={{
+                  color: 'gray',
+                  width: '25%'
+                }}>
+                  {`${data[i].astronaut.day}.${data[i].astronaut.month} ${data[i].astronaut.year}`}
                 </List.Item>
-                <List.Item style={{ width: '25%' }}>{`${data[i].astronaut
-                  .superpower}`}</List.Item>
-                <List.Item style={{ width: '25%', textAlign: 'right' }}>
+                <List.Item style={{
+                  width: '25%'
+                }}>{`${data[i].astronaut.superpower}`}</List.Item>
+                <List.Item style={{
+                  width: '25%',
+                  textAlign: 'right'
+                }}>
                   <Button id={data[i].id} onClick={this.handleBtnClick}>
                     Delete
                   </Button>
