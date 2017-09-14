@@ -81,7 +81,7 @@ class AddNewForm extends Component {
               }
             })
             .then(() => {
-              this.props.history.push('/');
+              this.props.history.push('/list');
             })
             .catch(err => {
               // handle error
@@ -98,7 +98,7 @@ class AddNewForm extends Component {
 
   handleBack = e => {
     e.preventDefault();
-    this.props.history.push('./');
+    this.props.history.push('./list');
   };
 
   render() {
