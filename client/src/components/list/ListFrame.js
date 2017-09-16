@@ -4,7 +4,7 @@ import ListItem from './ListItem';
 
 const ListFrame = props => {
   return (
-    <div>
+    <div className="list-wrapper">
       <h1>List of astronauts</h1>
       <ListItem
         data={props.data}

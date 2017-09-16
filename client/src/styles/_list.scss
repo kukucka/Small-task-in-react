@@ -1,0 +1,95 @@
+.list-wrapper {
+  display: flex;
+  flex-flow: column;
+  padding: 1%;
+
+  .list-segment {
+    max-width: 960px;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    height: 20px;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+
+  .list-unit {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+  }
+
+  .list-item {
+    font-size: 90%;
+    margin: 0 1%;
+    padding: 1%;
+    border-bottom: solid 1px grey;
+    //
+    &:nth-last-child(2) {
+      border-bottom: none;
+    }
+  }
+  .list-unit-part {
+    flex-basis: 0;
+    flex-grow: 4;
+    flex-shrink: 4;
+    text-align: center;
+    margin: auto 0;
+  }
+
+  .list-header {
+    font-size: 120%;
+    padding: 2%;
+    margin: 0 1%;
+    display: flex;
+    flex-direction: row;
+    color: $orange;
+    border-bottom: solid 5px $orange;
+    border-radius: 10px;
+  }
+
+  .list-header-part {
+    flex-basis: 0;
+    flex-grow: 4;
+    flex-shrink: 4;
+    text-align: center;
+    margin: auto 0;
+  }
+
+  .list-unit-btn {
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 2;
+    transition: transform 0.2s ease;
+  }
+
+  .list-btn-delete {
+    background: none;
+    &:focus {
+      color: inherit;
+      background: none;
+    }
+    &:hover,
+    &:active {
+      background: none;
+      color: red;
+      transform: scale(1.1);
+    }
+  }
+
+  .list-btn-add {
+    color: #fff;
+    background-color: $orange;
+    margin-top: 5%;
+    &:focus {
+      color: #fff;
+      background: $orange;
+    }
+    &:hover,
+    &:active {
+      color: #fff;
+      background-color: $orange-alt;
+    }
+  }
+}

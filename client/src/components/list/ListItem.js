@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import firebase from 'firebase';
-import {Segment, List, Button} from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { Button } from 'semantic-ui-react';
+import FlipMove from 'react-flip-move';
 
 class ListItem extends Component {
   handleBtnClick = e => {
@@ -15,48 +15,57 @@ class ListItem extends Component {
       for (let i = 0, j = 0; i < this.props.data.length; i++) {
         if (!data[i].deleted) {
           arr[j] = (
-            <Segment key={data[i].id}>
-              <List horizontal divided relaxed style={{
-                width: '100%',
-                textAlign: 'center'
-              }}>
-                <List.Item style={{
-                  width: '25%'
-                }}>
+            <div key={data[i].id} className="list-item">
+              <div className="list-unit">
+                <div className="list-unit-part">
                   {`${data[i].astronaut.name} ${data[i].astronaut.surename}`}
-                </List.Item>
-                <List.Item style={{
-                  color: 'gray',
-                  width: '25%'
-                }}>
-                  {`${data[i].astronaut.day}.${data[i].astronaut.month} ${data[i].astronaut.year}`}
-                </List.Item>
-                <List.Item style={{
-                  width: '25%'
-                }}>{`${data[i].astronaut.superpower}`}</List.Item>
-                <List.Item style={{
-                  width: '25%',
-                  textAlign: 'right'
-                }}>
-                  <Button id={data[i].id} onClick={this.handleBtnClick}>
-                    Delete
+                </div>
+                <div className="list-unit-part">
+                  {`${data[i].astronaut.day}.${data[i].astronaut.month} ${data[
+                    i
+                  ].astronaut.year}`}
+                </div>
+                <div className="list-unit-part">{`${data[i].astronaut
+                  .superpower}`}</div>
+                <div className="list-unit-btn">
+                  <Button
+                    className="list-btn-delete"
+                    id={data[i].id}
+                    onClick={this.handleBtnClick}
+                  >
+                    X
                   </Button>
-                </List.Item>
-              </List>
-            </Segment>
+                </div>
+              </div>
+            </div>
           );
           j += 1;
         }
       }
-      console.log(arr);
       return arr;
     }
   };
 
   render() {
     return (
-      <div>
-        <Segment>{this.handleCreateList()}</Segment>
+      <div className="list-segment">
+        <div>
+          <div className="list-header">
+            <div className="list-header-part">Full Name</div>
+            <div className="list-header-part">Date of Birth</div>
+            <div className="list-header-part">Superpower</div>
+            <div className="list-unit-btn" />
+          </div>
+        </div>
+
+        <FlipMove
+          maintainContainerHeight={true}
+          enterAnimation="elevator"
+          leaveAnimation="elevator"
+          duration="500"
+        >
+          {this.handleCreateList()}
+        </FlipMove>
       </div>
     );
   }

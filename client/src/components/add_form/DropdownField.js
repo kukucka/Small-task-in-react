@@ -10,7 +10,7 @@ class DropdownField extends Component {
 
   displayError = () => {
     if (this.props.errors) {
-      return <h3>{this.props.errors}</h3>;
+      return <div className="form-error form-error-dropdown">{this.props.errors}</div>;
     }
     return '';
   };
@@ -18,17 +18,20 @@ class DropdownField extends Component {
   render() {
     return (
       <div>
-        {this.displayError()}
         <Dropdown
+          className="form-input-dropdown"
           error={!!this.props.errors}
           placeholder={this.props.holder}
+          type="text"
           search
           selection
-          options={this.props.option} //{this.handleOptions()}
+          options={this.props.option}
           name={this.props.name}
           onChange={this.handleInput}
           value={this.props.value}
         />
+        {this.displayError()}
+
       </div>
     );
   }

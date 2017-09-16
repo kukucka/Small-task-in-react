@@ -1,17 +1,34 @@
-@import './_colors.scss';
+//Variables
+$orange: #fd6e00;
+$orange-alt: darken($orange, 15%);
+$backGround: #f2f2f2;
+$textColor: #505050;
+$error: #9f3a38;
 
 *{
-  font-size: 20px;
+  margin: 0 auto;
+}
 
+html,
+body {
+  background-color: $backGround;
+  color: $textColor;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
 }
 
 h1{
-  font-size: 160%;
+  font-size: 180%;
   color: $orange;
+  text-align: center;
 }
 p{
-  font-size: 80%;
+  line-height: 145%;
+  font-size: 90%;
 }
-.container {
-  font-size: 20px;
-}
+
+
+@import './_homePage.scss';
+@import './_buttons.scss';
+@import './_list.scss';
+@import './_addForm.scss';

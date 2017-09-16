@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Button} from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
+import spaceship from '../data/images/spaceship.png';
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Welcome to AstroList</h1>
-      <p>
-        On this site we collect names of all the astronauts who were in the
-        space and their signicture superpowers. Feel free to add your favorite
-        astronaut or if you find some mistake feel free to delete it
-      </p>
-      <Link to="/list"><Button>Show me list</Button></Link>
+    <div className="home-wraper">
+      <div className="pop">
+        <h1>Welcome to AstroList</h1>
+        <p>
+          On this site we collect names of all astronauts who were in space,
+          their date of birth and their signicture superpowers. Feel free to add
+          your favorite astronaut or if you find some mistake feel free to
+          delete it.
+        </p>
+        <img src={spaceship} alt="space_ship" width="200px" height="200px" />
+        <Link to="/list">
+          <Button className="btn-home">Show me list</Button>
+        </Link>
+      </div>
     </div>
   );
 };

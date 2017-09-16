@@ -6,12 +6,8 @@ const AddNew = props => {
   return (
     <div>
       <Link to="/new">
-        <Button primary>
-          <h2 style={{
-            textDecoration: 'none',
-            color: 'white'
-          }}>
-            Add new</h2>
+        <Button className="list-btn-add">
+            Add new
         </Button>
       </Link>
 

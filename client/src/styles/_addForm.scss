@@ -1,0 +1,49 @@
+.form-wrapper {
+  padding: 1%;
+  max-width: 900px;
+
+  .form-label {
+    font-size: 115%;
+    margin-bottom: -5px;
+    background: none;
+    color: $textColor;
+    font-weight: bold;
+  }
+
+  .form-group-dropdown {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .form-input-dropdown {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-error {
+    color: $error;
+  }
+  .form-error-dropdown {
+    text-align: center;
+  }
+
+  .form-btn {
+    text-align: center;
+    color: #fff;
+    background-color: $orange;
+    &:focus {
+      color: #fff;
+      background: $orange;
+    }
+    &:hover,
+    &:active {
+      color: #fff;
+      background-color: $orange-alt;
+    }
+  }
+}

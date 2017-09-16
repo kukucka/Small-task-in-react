@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Form, Input, Dropdown, Rating, Accordion } from 'semantic-ui-react';
+import React from 'react';
+import { Form, Button, Label } from 'semantic-ui-react';
 
 import { days } from '../../data/days';
 import { months } from '../../data/months';
@@ -10,9 +10,9 @@ import DropdownField from './DropdownField';
 
 const InputForm = props => {
   return (
-    <div>
+    <div className="form-wrapper">
       <h1>Add New Astronaut</h1>
-      <Form onSubmit={props.onHandleSubmit}>
+      <Form className="form" onSubmit={props.onHandleSubmit}>
         <InputField
           errors={props.errors.name}
           name="name"
@@ -34,9 +34,9 @@ const InputForm = props => {
           value={props.data.superpower}
           onHandleChangeOnInput={props.onHandleChangeOnInput}
         />
-        <Form.Field required style={{ marginTop: '5px' }}>
-          <label>Date of Birth</label>
-          <Form.Group unstackable>
+        <Form.Field>
+          <Label className="form-label">Date of Birth</Label>
+          <Form.Group className="form-group-dropdown">
             <DropdownField
               errors={props.errors.day}
               holder="Day"
@@ -63,12 +63,12 @@ const InputForm = props => {
             />
           </Form.Group>
         </Form.Field>
-        <Form.Group unstackable>
-          <Form.Button primary>Submit</Form.Button>
-          <Form.Button primary onClick={props.onHandleBack}>
+        <div className="form-align-helper">
+          <Button className="form-btn">Submit</Button>
+          <Button className="form-btn" onClick={props.onHandleBack}>
             Go back
-          </Form.Button>
-        </Form.Group>
+          </Button>
+        </div>
       </Form>
     </div>
   );

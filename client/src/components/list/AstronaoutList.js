@@ -24,7 +24,6 @@ class AstronaoutList extends Component {
   }
 
   handleDeleteAstronaut = id => {
-    // bears endpoint currently holds the object { name: 'Bill', type: 'Grizzly' }
     base
       .update(`astronauts/${id}`, {
         data: { deleted: true }
@@ -42,15 +41,12 @@ class AstronaoutList extends Component {
               };
             });
           });
-      })
-      .catch(err => {
-        //handle error
       });
   };
 
   render() {
     return (
-      <div>
+      <div className="list-wrapper">
         <ListFrame
           data={this.state.list}
           onhandleDeleteAstronaut={this.handleDeleteAstronaut}
