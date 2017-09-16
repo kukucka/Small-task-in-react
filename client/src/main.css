@@ -17,10 +17,6 @@ p {
   line-height: 145%;
   font-size: 90%; }
 
-.container {
-  font-size: 20px;
-  display: flex; }
-
 .home-wraper {
   padding: 2%; }
   .home-wraper .btn-home {
