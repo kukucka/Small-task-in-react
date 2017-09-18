@@ -12,10 +12,31 @@ h1 {
   font-size: 180%;
   color: #fd6e00;
   text-align: center; }
+  @media screen and (max-width: 699px) and (min-width: 480px) {
+    h1 {
+      background-color: inherit;
+      font-size: 140%; } }
+  @media screen and (max-width: 479px) and (min-width: 335px) {
+    h1 {
+      background-color: inherit;
+      font-size: 120%; } }
+  @media screen and (max-width: 334px) {
+    h1 {
+      background-color: inherit;
+      font-size: 100%; } }
 
 p {
   line-height: 145%;
   font-size: 90%; }
+  @media screen and (max-width: 699px) and (min-width: 480px) {
+    p {
+      font-size: 80%; } }
+  @media screen and (max-width: 479px) and (min-width: 335px) {
+    p {
+      font-size: 70%; } }
+  @media screen and (max-width: 334px) {
+    p {
+      font-size: 60%; } }
 
 .home-wraper {
   padding: 2%; }
@@ -29,6 +50,15 @@ p {
     .home-wraper .btn-home:hover, .home-wraper .btn-home:active {
       color: #fff;
       background-color: #b14d00; }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      .home-wraper .btn-home {
+        font-size: 85%; } }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      .home-wraper .btn-home {
+        font-size: 75%; } }
+    @media screen and (max-width: 334px) {
+      .home-wraper .btn-home {
+        font-size: 65%; } }
   .home-wraper .pop {
     position: relative;
     display: flex;
@@ -42,6 +72,21 @@ p {
     animation-fill-mode: forwards; }
   .home-wraper img {
     margin-bottom: 10px; }
+  .home-wraper .image {
+    width: 200px;
+    height: 200px; }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      .home-wraper .image {
+        width: 175px;
+        height: 175px; } }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      .home-wraper .image {
+        width: 150px;
+        height: 150px; } }
+    @media screen and (max-width: 334px) {
+      .home-wraper .image {
+        width: 125px;
+        height: 125px; } }
 
 @keyframes drop {
   0% {
@@ -63,6 +108,18 @@ p {
     justify-content: space-between;
     background-color: #fff;
     border-radius: 15px; }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      .list-wrapper .list-segment {
+        background-color: inherit;
+        font-size: 80%; } }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      .list-wrapper .list-segment {
+        background-color: inherit;
+        font-size: 60%; } }
+    @media screen and (max-width: 334px) {
+      .list-wrapper .list-segment {
+        background-color: inherit;
+        font-size: 50%; } }
   .list-wrapper .list-unit {
     display: flex;
     flex-direction: row;
@@ -109,6 +166,9 @@ p {
       background: none;
       color: red;
       transform: scale(1.1); }
+    @media screen and (max-width: 699px) {
+      .list-wrapper .list-btn-delete {
+        font-size: 80%; } }
   .list-wrapper .list-btn-add {
     color: #fff;
     background-color: #fd6e00;
@@ -119,6 +179,15 @@ p {
     .list-wrapper .list-btn-add:hover, .list-wrapper .list-btn-add:active {
       color: #fff;
       background-color: #b14d00; }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      .list-wrapper .list-btn-add {
+        font-size: 80%; } }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      .list-wrapper .list-btn-add {
+        font-size: 70%; } }
+    @media screen and (max-width: 334px) {
+      .list-wrapper .list-btn-add {
+        font-size: 60%; } }
 
 .form-wrapper {
   padding: 1%;

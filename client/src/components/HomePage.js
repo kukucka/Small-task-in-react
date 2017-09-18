@@ -14,7 +14,7 @@ const HomePage = () => {
           your favorite astronaut or if you find some mistake feel free to
           delete it.
         </p>
-        <img src={spaceship} alt="space_ship" width="200px" height="200px" />
+        <img src={spaceship} className="image" alt="space_ship"  />
         <Link to="/list">
           <Button className="btn-home">Show me list</Button>
         </Link>

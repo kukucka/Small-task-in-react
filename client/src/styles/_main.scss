@@ -21,10 +21,31 @@ h1{
   font-size: 180%;
   color: $orange;
   text-align: center;
+  @media screen and (max-width: 699px) and (min-width: 480px){
+    background-color: inherit;
+    font-size: 140%;
+  }
+  @media screen and (max-width: 479px) and (min-width: 335px){
+    background-color: inherit;
+    font-size: 120%;
+  }
+  @media screen and (max-width: 334px){
+    background-color: inherit;
+    font-size: 100%;
+  }
 }
 p{
   line-height: 145%;
   font-size: 90%;
+  @media screen and (max-width: 699px) and (min-width: 480px){
+    font-size: 80%;
+  }
+  @media screen and (max-width: 479px) and (min-width: 335px){
+    font-size: 70%;
+  }
+  @media screen and (max-width: 334px){
+    font-size: 60%;
+  }
 }
 
 

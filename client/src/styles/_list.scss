@@ -12,6 +12,18 @@
     justify-content: space-between;
     background-color: #fff;
     border-radius: 15px;
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      background-color: inherit;
+      font-size: 80%;
+    }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      background-color: inherit;
+      font-size: 60%;
+    }
+    @media screen and (max-width: 334px) {
+      background-color: inherit;
+      font-size: 50%;
+    }
   }
 
   .list-unit {
@@ -76,6 +88,9 @@
       color: red;
       transform: scale(1.1);
     }
+    @media screen and (max-width: 699px) {
+      font-size: 80%;
+    }
   }
 
   .list-btn-add {
@@ -90,6 +105,15 @@
     &:active {
       color: #fff;
       background-color: $orange-alt;
+    }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      font-size: 80%;
+    }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      font-size: 70%;
+    }
+    @media screen and (max-width: 334px) {
+      font-size: 60%;
     }
   }
 }
