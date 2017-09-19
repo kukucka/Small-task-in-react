@@ -35,8 +35,10 @@ const InputForm = props => {
           onHandleChangeOnInput={props.onHandleChangeOnInput}
         />
         <Form.Field>
+          <div className="form-align-helper">
           <Label className="form-label">Date of Birth</Label>
-          <Form.Group className="form-group-dropdown">
+        </div>
+          <div className="form-group-dropdown">
             <DropdownField
               errors={props.errors.day}
               holder="Day"
@@ -53,6 +55,7 @@ const InputForm = props => {
               value={props.data.month}
               onHandleChangeOnInput={props.onHandleChangeOnInput}
             />
+            <div className="try">
             <DropdownField
               errors={props.errors.year}
               holder="Year"
@@ -60,8 +63,11 @@ const InputForm = props => {
               option={years}
               value={props.data.year}
               onHandleChangeOnInput={props.onHandleChangeOnInput}
+
             />
-          </Form.Group>
+          </div>
+
+          </div>
         </Form.Field>
         <div className="form-align-helper">
           <Button className="form-btn">Submit</Button>

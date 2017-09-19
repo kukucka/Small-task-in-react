@@ -78,7 +78,7 @@
 
   .list-btn-delete {
     background: none;
-    &:focus {
+     &:focus {
       color: inherit;
       background: none;
     }
@@ -94,26 +94,7 @@
   }
 
   .list-btn-add {
-    color: #fff;
-    background-color: $orange;
-    margin-top: 5%;
-    &:focus {
-      color: #fff;
-      background: $orange;
-    }
-    &:hover,
-    &:active {
-      color: #fff;
-      background-color: $orange-alt;
-    }
-    @media screen and (max-width: 699px) and (min-width: 480px) {
-      font-size: 80%;
-    }
-    @media screen and (max-width: 479px) and (min-width: 335px) {
-      font-size: 70%;
-    }
-    @media screen and (max-width: 334px) {
-      font-size: 60%;
-    }
+    @include button();
+    margin-top:5px;
   }
 }

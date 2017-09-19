@@ -43,7 +43,7 @@ p {
   .home-wraper .btn-home {
     color: #fff;
     background-color: #fd6e00;
-    transition: background .2s ease; }
+    transition: background 0.2s ease; }
     .home-wraper .btn-home:focus {
       color: #fff;
       background: #fd6e00; }
@@ -68,7 +68,7 @@ p {
     max-width: 760px;
     top: 200px;
     animation-name: drop;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards; }
   .home-wraper img {
     margin-bottom: 10px; }
@@ -172,7 +172,8 @@ p {
   .list-wrapper .list-btn-add {
     color: #fff;
     background-color: #fd6e00;
-    margin-top: 5%; }
+    transition: background 0.2s ease;
+    margin-top: 5px; }
     .list-wrapper .list-btn-add:focus {
       color: #fff;
       background: #fd6e00; }
@@ -181,13 +182,13 @@ p {
       background-color: #b14d00; }
     @media screen and (max-width: 699px) and (min-width: 480px) {
       .list-wrapper .list-btn-add {
-        font-size: 80%; } }
+        font-size: 85%; } }
     @media screen and (max-width: 479px) and (min-width: 335px) {
       .list-wrapper .list-btn-add {
-        font-size: 70%; } }
+        font-size: 75%; } }
     @media screen and (max-width: 334px) {
       .list-wrapper .list-btn-add {
-        font-size: 60%; } }
+        font-size: 65%; } }
 
 .form-wrapper {
   padding: 1%;
@@ -198,28 +199,61 @@ p {
     background: none;
     color: #505050;
     font-weight: bold; }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      .form-wrapper .form-label {
+        font-size: 100%; } }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      .form-wrapper .form-label {
+        font-size: 85%; } }
+    @media screen and (max-width: 334px) {
+      .form-wrapper .form-label {
+        font-size: 75%; } }
   .form-wrapper .form-group-dropdown {
     display: flex;
     flex-grow: 1;
-    flex-shrink: 1; }
+    flex-shrink: 1;
+    flex-flow: row; }
+    @media screen and (max-width: 991px) {
+      .form-wrapper .form-group-dropdown {
+        flex-flow: column; } }
   .form-wrapper .form-input-dropdown {
     display: flex;
-    flex-grow: 1;
     flex-shrink: 1;
     text-align: center;
     margin: 0;
     padding: 0; }
   .form-wrapper .form-error {
     color: #9f3a38; }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      .form-wrapper .form-error {
+        font-size: 90%; } }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      .form-wrapper .form-error {
+        font-size: 80%; } }
+    @media screen and (max-width: 334px) {
+      .form-wrapper .form-error {
+        font-size: 70%; } }
   .form-wrapper .form-error-dropdown {
     text-align: center; }
   .form-wrapper .form-btn {
-    text-align: center;
     color: #fff;
-    background-color: #fd6e00; }
+    background-color: #fd6e00;
+    transition: background 0.2s ease; }
     .form-wrapper .form-btn:focus {
       color: #fff;
       background: #fd6e00; }
     .form-wrapper .form-btn:hover, .form-wrapper .form-btn:active {
       color: #fff;
       background-color: #b14d00; }
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      .form-wrapper .form-btn {
+        font-size: 85%; } }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      .form-wrapper .form-btn {
+        font-size: 75%; } }
+    @media screen and (max-width: 334px) {
+      .form-wrapper .form-btn {
+        font-size: 65%; } }
+  @media screen and (max-width: 991px) {
+    .form-wrapper .form-align-helper {
+      text-align: center; } }

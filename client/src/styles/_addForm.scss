@@ -8,17 +8,29 @@
     background: none;
     color: $textColor;
     font-weight: bold;
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      font-size: 100%;
+    }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      font-size: 85%;
+    }
+    @media screen and (max-width: 334px) {
+      font-size: 75%;
+    }
   }
 
   .form-group-dropdown {
     display: flex;
     flex-grow: 1;
     flex-shrink: 1;
+    flex-flow: row;
+    @media screen and (max-width: 991px) {
+      flex-flow: column;
+    }
   }
 
   .form-input-dropdown {
     display: flex;
-    flex-grow: 1;
     flex-shrink: 1;
     text-align: center;
     margin: 0;
@@ -27,23 +39,27 @@
 
   .form-error {
     color: $error;
+    @media screen and (max-width: 699px) and (min-width: 480px) {
+      font-size: 90%;
+    }
+    @media screen and (max-width: 479px) and (min-width: 335px) {
+      font-size: 80%;
+    }
+    @media screen and (max-width: 334px) {
+      font-size: 70%;
+    }
   }
   .form-error-dropdown {
     text-align: center;
   }
 
   .form-btn {
-    text-align: center;
-    color: #fff;
-    background-color: $orange;
-    &:focus {
-      color: #fff;
-      background: $orange;
-    }
-    &:hover,
-    &:active {
-      color: #fff;
-      background-color: $orange-alt;
+    @include button();
+  }
+
+  .form-align-helper {
+    @media screen and (max-width: 991px) {
+      text-align: center;
     }
   }
 }

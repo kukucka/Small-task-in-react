@@ -5,7 +5,7 @@ $backGround: #f2f2f2;
 $textColor: #505050;
 $error: #9f3a38;
 
-*{
+* {
   margin: 0 auto;
 }
 
@@ -17,37 +17,60 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1{
+h1 {
   font-size: 180%;
   color: $orange;
   text-align: center;
-  @media screen and (max-width: 699px) and (min-width: 480px){
+  @media screen and (max-width: 699px) and (min-width: 480px) {
     background-color: inherit;
     font-size: 140%;
   }
-  @media screen and (max-width: 479px) and (min-width: 335px){
+  @media screen and (max-width: 479px) and (min-width: 335px) {
     background-color: inherit;
     font-size: 120%;
   }
-  @media screen and (max-width: 334px){
+  @media screen and (max-width: 334px) {
     background-color: inherit;
     font-size: 100%;
   }
 }
-p{
+p {
   line-height: 145%;
   font-size: 90%;
-  @media screen and (max-width: 699px) and (min-width: 480px){
+  @media screen and (max-width: 699px) and (min-width: 480px) {
     font-size: 80%;
   }
-  @media screen and (max-width: 479px) and (min-width: 335px){
+  @media screen and (max-width: 479px) and (min-width: 335px) {
     font-size: 70%;
   }
-  @media screen and (max-width: 334px){
+  @media screen and (max-width: 334px) {
     font-size: 60%;
   }
 }
 
+@mixin button() {
+  color: #fff;
+  background-color: $orange;
+  transition: background 0.2s ease;
+  &:focus {
+    color: #fff;
+    background: $orange;
+  }
+  &:hover,
+  &:active {
+    color: #fff;
+    background-color: $orange-alt;
+  }
+  @media screen and (max-width: 699px) and (min-width: 480px) {
+    font-size: 85%;
+  }
+  @media screen and (max-width: 479px) and (min-width: 335px) {
+    font-size: 75%;
+  }
+  @media screen and (max-width: 334px) {
+    font-size: 65%;
+  }
+}
 
 @import './_homePage.scss';
 @import './_list.scss';

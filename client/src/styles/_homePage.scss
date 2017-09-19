@@ -2,26 +2,7 @@
   padding: 2%;
 
   .btn-home {
-    color: #fff;
-    background-color: $orange;
-    transition: background .2s ease;
-    &:focus{
-      color: #fff;
-      background: $orange;
-    }
-    &:hover, &:active{
-      color: #fff;
-      background-color: $orange-alt;
-    }
-    @media screen and (max-width: 699px) and (min-width: 480px){
-      font-size:85%;
-    }
-    @media screen and (max-width: 479px) and (min-width: 335px){
-      font-size:75%;
-    }
-    @media screen and (max-width: 334px){
-      font-size:65%;
-    }
+    @include button();
   }
 
   .pop {
@@ -34,28 +15,28 @@
 
     top: 200px;
     animation-name: drop;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
   }
 
-  img{
+  img {
     margin-bottom: 10px;
   }
 
-  .image{
+  .image {
     width: 200px;
-    height:200px;
-    @media screen and (max-width: 699px) and (min-width: 480px){
+    height: 200px;
+    @media screen and (max-width: 699px) and (min-width: 480px) {
       width: 175px;
-      height:175px;
+      height: 175px;
     }
-    @media screen and (max-width: 479px) and (min-width: 335px){
+    @media screen and (max-width: 479px) and (min-width: 335px) {
       width: 150px;
-      height:150px;
+      height: 150px;
     }
-    @media screen and (max-width: 334px){
+    @media screen and (max-width: 334px) {
       width: 125px;
-      height:125px;
+      height: 125px;
     }
   }
 
@@ -63,7 +44,6 @@
     0% {
       opacity: 0;
     }
-    // 70%{transform: translateY(700px)}
     100% {
       transform: translateY(-200px);
       opacity: 1;

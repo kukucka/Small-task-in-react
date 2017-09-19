@@ -31,7 +31,6 @@ class DropdownField extends Component {
           value={this.props.value}
         />
         {this.displayError()}
-
       </div>
     );
   }
